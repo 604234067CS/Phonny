@@ -1,14 +1,19 @@
 <ion-header>
   <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
     <ion-title>{{contact.name}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <img src="{{contact.imageUrl}}" width="150" height="150">
-  
+  <ion-item >
+
+  <img src="{{contact.ImageUrl}}" width="150" height="150">
+
   <button ion-button block color="primary" (click)="call()">
-    <ion-icon name="call" ></ion-icon> &nbsp; &nbsp;CALL :&nbsp;
+    <ion-icon name="call"></ion-icon> &nbsp; &nbsp;CALL :&nbsp;
     {{contact.telephone}}
   </button>
 
@@ -16,6 +21,6 @@
     <ion-icon name="chatboxes"></ion-icon> &nbsp; &nbsp;SMS :&nbsp;
     {{contact.telephone}}
   </button>
-
+</ion-item>
 
 </ion-content>

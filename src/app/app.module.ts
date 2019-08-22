@@ -1,3 +1,7 @@
+import { PostJsonPage } from './../pages/post-json/post-json';
+import { SimpleJsonPage } from './../pages/simple-json/simple-json';
+import { ArrayJsonPage } from './../pages/array-json/array-json';
+import { JsonMenuPage } from './../pages/json-menu/json-menu';
 import { FlashPage } from './../pages/flash/flash';
 import { LoginPage } from './../pages/login/login';
 import { BarcodescanPage } from './../pages/barcodescan/barcodescan';
@@ -20,7 +24,12 @@ import { BatteryStatus } from '@ionic-native/battery-status';
     ListPage,
     BarcodescanPage,
     LoginPage,
-    FlashPage
+    FlashPage,
+    JsonMenuPage,
+    ArrayJsonPage,
+    SimpleJsonPage,
+    PostJsonPage
+    
   ],
   imports: [
     BrowserModule,
@@ -33,7 +42,11 @@ import { BatteryStatus } from '@ionic-native/battery-status';
     ListPage,
     BarcodescanPage,
     LoginPage,
-    FlashPage
+    FlashPage,
+    JsonMenuPage,
+    ArrayJsonPage,
+    SimpleJsonPage,
+    PostJsonPage
   ],
   providers: [
     StatusBar,

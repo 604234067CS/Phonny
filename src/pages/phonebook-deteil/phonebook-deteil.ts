@@ -14,7 +14,8 @@ import { SMS } from '@ionic-native/sms';
   templateUrl: 'phonebook-deteil.html',
 })
 export class PhonebookDeteilPage {
-  contact = { name: '', telephone: '', imageUrl: '' };
+
+  contact = { name: '', telephone: '', ImageUrl: '' };
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private mysms:SMS) {
   }

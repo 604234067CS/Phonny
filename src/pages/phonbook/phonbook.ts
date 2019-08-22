@@ -15,12 +15,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PhonbookPage {
 
-  contactArray = [ {name: 'Kan',telephone: '0882372538',imageUrl: 'assets/imgs/Koala.jpg'},
-                   {name: 'Tar',telephone: '0986866014',imageUrl: 'assets/imgs/Penguins.jpg'},
-                   {name: 'Bah',telephone: '0935951819',imageUrl: 'assets/imgs/Chrysanthemum.jpg'} ,
-                   {name: 'Far',telephone: '0916466030',imageUrl: 'assets/imgs/Desert.jpg'},
-                   {name: 'Sma',telephone: '0888342938',imageUrl: 'assets/imgs/Hydrangeas.jpg'}
-                ];
+  contactArray = [{name: 'nus',   telephone: '  0822697162',  ImageUrl: 'assets/imgs/oef1.jpg'},
+                  {name: 'baa',   telephone: '  0935951819',  ImageUrl: 'assets/imgs/oef2.jpg'},
+                  {name: 'faa',   telephone: '  0916466030',  ImageUrl: 'assets/imgs/oef3.jpg'},
+                  {name: 'vee',   telephone: '  0864845806',  ImageUrl: 'assets/imgs/oef4.jpg'},
+                  {name: 'nusA',  telephone: '  0660080386',  ImageUrl: 'assets/imgs/oef5.jpg'}
+                  ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -29,7 +29,7 @@ export class PhonbookPage {
     console.log('ionViewDidLoad PhonbookPage');
   }
 
-  viewDetails(item){
+  viewDetail(item){
     this.navCtrl.push("PhonebookDeteilPage",item)
 }
 
