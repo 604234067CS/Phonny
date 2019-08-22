@@ -1,0 +1,7 @@
+{
+  "name": "LnwNus",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
