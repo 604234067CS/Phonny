@@ -15,7 +15,7 @@ import { Flashlight } from '@ionic-native/flashlight';
   templateUrl: 'flash.html',
 })
 export class FlashPage {
-  constructor(public navCtrl: NavController, public navParams: NavParams, private flashlight: Flashlight) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private flashlight: Flashlight) {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad FlashPage');

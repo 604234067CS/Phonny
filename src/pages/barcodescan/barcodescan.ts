@@ -1,7 +1,6 @@
-import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 /**
  * Generated class for the BarcodescanPage page.
  *
