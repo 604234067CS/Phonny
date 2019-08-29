@@ -1,3 +1,4 @@
+import {HttpClientModule} from '@angular/common/http';
 import { PostJsonPage } from './../pages/post-json/post-json';
 import { SimpleJsonPage } from './../pages/simple-json/simple-json';
 import { ArrayJsonPage } from './../pages/array-json/array-json';
@@ -17,6 +18,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Flashlight } from '@ionic-native/flashlight';
 import { BatteryStatus } from '@ionic-native/battery-status';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -28,11 +31,12 @@ import { BatteryStatus } from '@ionic-native/battery-status';
     JsonMenuPage,
     ArrayJsonPage,
     SimpleJsonPage,
-    PostJsonPage
+    PostJsonPage,
     
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -46,7 +50,7 @@ import { BatteryStatus } from '@ionic-native/battery-status';
     JsonMenuPage,
     ArrayJsonPage,
     SimpleJsonPage,
-    PostJsonPage
+    PostJsonPage,
   ],
   providers: [
     StatusBar,
