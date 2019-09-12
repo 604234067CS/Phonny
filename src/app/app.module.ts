@@ -1,3 +1,7 @@
+import { PopularPage } from './../pages/popular/popular';
+import { TopRatedPage } from './../pages/top-rated/top-rated';
+import { UpcomingPage } from './../pages/upcoming/upcoming';
+import { MovieAppPage } from './../pages/movie-app/movie-app';
 import {HttpClientModule} from '@angular/common/http';
 import { PostJsonPage } from './../pages/post-json/post-json';
 import { SimpleJsonPage } from './../pages/simple-json/simple-json';
@@ -18,6 +22,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Flashlight } from '@ionic-native/flashlight';
 import { BatteryStatus } from '@ionic-native/battery-status';
+import { NowPlayingPage } from '../pages/now-playing/now-playing';
+
 
 
 @NgModule({
@@ -32,6 +38,12 @@ import { BatteryStatus } from '@ionic-native/battery-status';
     ArrayJsonPage,
     SimpleJsonPage,
     PostJsonPage,
+    MovieAppPage,
+    UpcomingPage,
+    TopRatedPage,
+    NowPlayingPage,
+    PopularPage
+
     
   ],
   imports: [
@@ -51,6 +63,12 @@ import { BatteryStatus } from '@ionic-native/battery-status';
     ArrayJsonPage,
     SimpleJsonPage,
     PostJsonPage,
+    MovieAppPage,
+    UpcomingPage,
+    TopRatedPage,
+    NowPlayingPage,
+    PopularPage
+
   ],
   providers: [
     StatusBar,
