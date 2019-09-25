@@ -1,7 +1,11 @@
+import { VideoPage } from './../video/video';
+import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
-import { ApiKeysProvider } from '../../providers/api-keys/api-keys';
+import { SocialSharing } from '@ionic-native/social-sharing';
+
+
 
 
 /**
@@ -20,7 +24,8 @@ export class MovieDetailPage {
 
   moviedata:any=[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private ttr : TextToSpeech) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private ttr : TextToSpeech,
+    private socialSharing: SocialSharing) {
   }
 
   ionViewDidLoad() {
@@ -38,6 +43,24 @@ export class MovieDetailPage {
   .then(() => console.log('Success'))
   .catch((reason: any) => console.log(reason));
 }
+stop(){
+  this.ttr.stop();
+}
 
+shareFace(movie){
+  this.socialSharing.shareViaTwitter(movie.overview,movie.poster_path.movie.VideoPage);
 
+}
+
+sharetwitter(movie){
+  this.socialSharing.shareViaFacebook(movie.overview,movie.poster_path.movie.VideoPage);
+}
+
+shareInstagram(movie){
+  this.socialSharing.shareViaInstagram(movie.overview,movie.poster_path.movie.HomePage);
+}
+
+shareWhatsApp(movie){
+  this.socialSharing.shareViaWhatsApp(movie.overview,movie.poster_path.movie.HomePage)
+}
 }

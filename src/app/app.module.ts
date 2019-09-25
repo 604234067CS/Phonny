@@ -20,9 +20,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Flashlight } from '@ionic-native/flashlight';
 import { BatteryStatus } from '@ionic-native/battery-status';
 import { ApiKeysProvider } from '../providers/api-keys/api-keys';
-import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
-
+import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 
 
@@ -40,7 +40,7 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
     SimpleJsonPage,
     PostJsonPage,
     MovieAppPage,
- 
+    
     
 
     
@@ -65,11 +65,10 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
     MovieAppPage,
 
 
-
   ],
   providers: [
     StatusBar,
-    SplashScreen,SMS,BarcodeScanner,Flashlight,BatteryStatus,TextToSpeech,YoutubeVideoPlayer,
+    SplashScreen,SMS,BarcodeScanner,Flashlight,BatteryStatus,YoutubeVideoPlayer,TextToSpeech,SocialSharing,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ApiKeysProvider
   ]

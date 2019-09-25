@@ -6,19 +6,24 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title text-center>MovieDetail</ion-title>
+    <ion-title >MovieDetail</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
   <ion-card color="dark">
+      <ion-item>
+          <ion-avatar item-left>
+            <img src="https://image.tmdb.org/t/p/original/{{moviedata.poster_path}}">
+          </ion-avatar>
+          <p>{{moviedata.title}}</p>
+        </ion-item>
     <ion-card-header>
       <ion-thumbnail item-start>
         <img src="https://image.tmdb.org/t/p/original/{{moviedata.poster_path}}">
       </ion-thumbnail>
       <button ion-button block icon-lef color="light" (click)="openVideo(moviedata.id)">Video Trailler</button>
-      <button ion-button block icon-lef color="light" (click)="talk(moviedata.overview)">textOrOptions</button>
     </ion-card-header>
   </ion-card>
 
@@ -32,6 +37,27 @@
       <h2><b>Overview</b></h2>
       <p>{{moviedata.overview}}</p>
     </ion-card-content>
+
+    
+  <button ion-button color="secondary" clear (click)="talk(moviedata.overview)"> 
+    <ion-icon name="mic"></ion-icon>
+    &nbsp; LISTEN
+  </button>
+  <button ion-button color="danger" clear    (click)="stop()">
+    <ion-icon name="mic-off"></ion-icon> 
+    &nbsp; STOP
+  </button>
+
+    <ion-fab below right edge>
+        <button ion-fab color="dark"><ion-icon name="md-share"></ion-icon></button>
+        <ion-fab-list side="top">
+          <button ion-fab (click)=shareFace(moviedata)><ion-icon name="logo-facebook"></ion-icon></button>
+          <button ion-fab (click)=sharetwitter(moviedata)><ion-icon name="logo-twitter"></ion-icon></button>
+          <button ion-fab (click)=shareInstagram(moviedata)><ion-icon name="logo-instagram"></ion-icon></button>
+          <button ion-fab (click)=shareWhatsApp(moviedata)><ion-icon name="logo-whatsapp"></ion-icon></button>
+        </ion-fab-list>
+      </ion-fab>
+
   </ion-card>
 
 

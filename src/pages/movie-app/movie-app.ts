@@ -1,7 +1,7 @@
-
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ApiKeysProvider } from '../../providers/api-keys/api-keys';
+
 
 /**
  * Generated class for the MovieAppPage page.
@@ -14,9 +14,14 @@ import { ApiKeysProvider } from '../../providers/api-keys/api-keys';
 @Component({
   selector: 'page-movie-app',
   templateUrl: 'movie-app.html',
+
+  
 })
+
+
 export class MovieAppPage {
 
+  
   moviesArray: any[];
   moviesArray1: any[];
   moviesArray2: any[];
