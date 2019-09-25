@@ -107,4 +107,6 @@
     <plugin name="cordova-plugin-battery-status" spec="^2.0.3" />
     <plugin name="cordova-plugin-flashlight" spec="^3.2.0" />
     <engine name="android" spec="7.1.4" />
+    <plugin name="cordova-plugin-tts" spec="^0.2.3" />
+    <plugin name="cordova-plugin-youtube-video-player" spec="^2.3.0" />
 </widget>

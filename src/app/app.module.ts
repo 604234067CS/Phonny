@@ -1,6 +1,3 @@
-import { PopularPage } from './../pages/popular/popular';
-import { TopRatedPage } from './../pages/top-rated/top-rated';
-import { UpcomingPage } from './../pages/upcoming/upcoming';
 import { MovieAppPage } from './../pages/movie-app/movie-app';
 import {HttpClientModule} from '@angular/common/http';
 import { PostJsonPage } from './../pages/post-json/post-json';
@@ -22,7 +19,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Flashlight } from '@ionic-native/flashlight';
 import { BatteryStatus } from '@ionic-native/battery-status';
-import { NowPlayingPage } from '../pages/now-playing/now-playing';
+import { ApiKeysProvider } from '../providers/api-keys/api-keys';
+import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
+
+
 
 
 
@@ -39,10 +40,8 @@ import { NowPlayingPage } from '../pages/now-playing/now-playing';
     SimpleJsonPage,
     PostJsonPage,
     MovieAppPage,
-    UpcomingPage,
-    TopRatedPage,
-    NowPlayingPage,
-    PopularPage
+ 
+    
 
     
   ],
@@ -64,16 +63,15 @@ import { NowPlayingPage } from '../pages/now-playing/now-playing';
     SimpleJsonPage,
     PostJsonPage,
     MovieAppPage,
-    UpcomingPage,
-    TopRatedPage,
-    NowPlayingPage,
-    PopularPage
+
+
 
   ],
   providers: [
     StatusBar,
-    SplashScreen,SMS,BarcodeScanner,Flashlight,BatteryStatus,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    SplashScreen,SMS,BarcodeScanner,Flashlight,BatteryStatus,TextToSpeech,YoutubeVideoPlayer,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ApiKeysProvider
   ]
 })
 export class AppModule {}

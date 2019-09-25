@@ -6,10 +6,85 @@
 -->
 <ion-header>
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>MovieApp</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <div padding>
+      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-segment [(ngModel)]="Movie">
+      <ion-segment-button value="NowPlaying">
+        NowPlaying
+      </ion-segment-button>
+      <ion-segment-button value="Popular">
+        Popular
+      </ion-segment-button>
+      <ion-segment-button value="Toprated">
+        Toprated
+      </ion-segment-button>
+      <ion-segment-button value="Upcoming">
+        Upcoming
+      </ion-segment-button>
+    </ion-segment>
+  </div>
 
+
+  <div [ngSwitch]="Movie">
+    <ion-list *ngSwitchCase="'NowPlaying'">
+      <ion-card-content>
+        <ion-item *ngFor="let movie of moviesArray" (click)="getDetails(movie)">
+          <ion-thumbnail item-left>
+            <img src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}">
+          </ion-thumbnail>
+          <ion-icon item-right color="medium" name="arrow-dropright"></ion-icon>
+          <h2><b>{{movie.title}}</b></h2>
+          <p>Release&nbsp;{{movie.release_date}}</p>
+        </ion-item>
+      </ion-card-content>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'Popular'">
+      <ion-card-content>
+        <ion-item *ngFor="let movie of moviesArray1" (click)="getDetails(movie)">
+          <ion-thumbnail item-left>
+            <img src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}">
+          </ion-thumbnail>
+          <ion-icon item-right color="medium" name="arrow-dropright"></ion-icon>
+          <h2><b>{{movie.title}}</b></h2>
+          <p>Release&nbsp;{{movie.release_date}}</p>
+        </ion-item>
+      </ion-card-content>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'Toprated'">
+      <ion-card-content>
+        <ion-item *ngFor="let movie of moviesArray2" (click)="getDetails(movie)">
+          <ion-thumbnail item-left>
+            <img src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}">
+          </ion-thumbnail>
+          <ion-icon item-right color="medium" name="arrow-dropright"></ion-icon>
+          <h2><b>{{movie.title}}</b></h2>
+          <p>Release&nbsp;{{movie.release_date}}</p>
+        </ion-item>
+      </ion-card-content>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'Upcoming'">
+      <ion-card-content>
+        <ion-item *ngFor="let movie of moviesArray3" (click)="getDetails(movie)">
+          <ion-thumbnail item-left>
+            <img src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}">
+          </ion-thumbnail>
+          <ion-icon item-right color="medium" name="arrow-dropright"></ion-icon>
+          <h2><b>{{movie.title}}</b></h2>
+          <p>Release&nbsp;{{movie.release_date}}</p>
+        </ion-item>
+      </ion-card-content>
+    </ion-list>
+
+  </div>
 </ion-content>
