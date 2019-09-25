@@ -24,18 +24,13 @@
                  <div class="title">
                      {{video.title}}
                      <div class="video-container">
-                         <iframe [src]="openVideo(video.key)" frameborder="0"></iframe>
+                         <iframe width="350" height="350" [src]="getVideo(video.key)" frameborder="0"></iframe>
                      </div>
-                     <ion-icon name="videocam" item-start > {{video.name}}</ion-icon>
+                     <ion-icon name="logo-youtube"> {{video.name}}</ion-icon>                     
                     </div>
               </ion-item>
             </ion-list>
       </ion-card-content>
     </ion-card>
 
-
-
-
-
-  
 </ion-content>
