@@ -37,7 +37,6 @@ export class VideoPage {
 
 getVideo(keyOpen){
   let dangerousVideoUrl = 'https://www.youtube.com/embed/' + keyOpen + '?rel=0&showinfo=0';
-  //this.youtube.openVideo(keyOpen);
   return this.sanitizer.bypassSecurityTrustResourceUrl(dangerousVideoUrl);
  }
 

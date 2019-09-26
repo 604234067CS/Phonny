@@ -29,6 +29,14 @@
 
   <ion-card color="light">
     <ion-card-content>
+        <ion-fab below right edge>
+            <button ion-fab color="dark"><ion-icon name="md-share"></ion-icon></button>
+            <ion-fab-list side="left">
+              <button ion-fab (click)=shareFace(moviedata)><ion-icon name="logo-facebook"></ion-icon></button>
+              <button ion-fab (click)=sharetwitter(moviedata)><ion-icon name="logo-twitter"></ion-icon></button>
+            </ion-fab-list>
+          </ion-fab>
+    
       <h2><b>Name</b></h2><p>{{moviedata.title}}</p>
       <h2><b>release_date</b></h2>
       <p>{{moviedata.release_date}}</p>
@@ -39,25 +47,14 @@
         <ion-icon name="mic"></ion-icon>
         &nbsp; LISTEN
       </button>
-      <button ion-button color="danger" clear    (click)="stop()">
+      <button ion-button color="danger" clear    (click)="stop(moviedata.overview)">
         <ion-icon name="mic-off"></ion-icon> 
         &nbsp; STOP
       </button>
       <p>{{moviedata.overview}}</p>
     </ion-card-content>
 
-
-
-    <ion-fab below right edge>
-        <button ion-fab color="dark"><ion-icon name="md-share"></ion-icon></button>
-        <ion-fab-list side="top">
-          <button ion-fab (click)=shareFace(moviedata)><ion-icon name="logo-facebook"></ion-icon></button>
-          <button ion-fab (click)=sharetwitter(moviedata)><ion-icon name="logo-twitter"></ion-icon></button>
-          <button ion-fab (click)=shareInstagram(moviedata)><ion-icon name="logo-instagram"></ion-icon></button>
-          <button ion-fab (click)=shareWhatsApp(moviedata)><ion-icon name="logo-whatsapp"></ion-icon></button>
-        </ion-fab-list>
-      </ion-fab>
-
+   
   </ion-card>
 
 

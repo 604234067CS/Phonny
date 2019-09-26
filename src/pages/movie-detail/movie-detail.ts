@@ -1,5 +1,3 @@
-import { VideoPage } from './../video/video';
-import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
@@ -23,6 +21,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 export class MovieDetailPage {
 
   moviedata:any=[];
+  playing: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private ttr : TextToSpeech,
     private socialSharing: SocialSharing) {
@@ -37,30 +36,36 @@ export class MovieDetailPage {
     this.navCtrl.push("VideoPage",movie);
 }
 
- talk(textOrOptions){
-   console.log(textOrOptions);
-  this.ttr.speak(textOrOptions)
-  .then(() => console.log('Success'))
-  .catch((reason: any) => console.log(reason));
-}
-stop(){
-  this.ttr.stop();
+talk(textOrOptions:string){
+  this.ttr.speak(textOrOptions);
 }
 
+stop(){
+  this.ttr.speak("").then((value)=>{
+  this.playing=false;
+  });
+  }
+
 shareFace(movie){
-  this.socialSharing.shareViaTwitter(movie.overview,movie.poster_path.movie.VideoPage);
+  this.socialSharing.shareViaFacebook(movie.overview,movie.poster_path,null)
+  .then(()  => {
+    console.log("Post successfuly");
+    this.moviedata = this.navParams.data;
+}).catch((error) => {
+    console.log("Fail posting")
+});
 
 }
 
 sharetwitter(movie){
-  this.socialSharing.shareViaFacebook(movie.overview,movie.poster_path.movie.VideoPage);
+  this.socialSharing.shareViaTwitter(movie.overview,movie.poster_path,null)
+  .then(()  => {
+      console.log("Post successfuly");
+      this.moviedata = this.navParams.data;
+  }).catch((error) => {
+      console.log("Fail posting")
+  });
 }
 
-shareInstagram(movie){
-  this.socialSharing.shareViaInstagram(movie.overview,movie.poster_path.movie.HomePage);
 }
 
-shareWhatsApp(movie){
-  this.socialSharing.shareViaWhatsApp(movie.overview,movie.poster_path.movie.HomePage)
-}
-}
